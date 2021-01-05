@@ -42,4 +42,19 @@ fetch("https://pokeapi.co/api/v2/pokemon/")
   obtenerPokemones()
 
 
-  
+Uso de nodemon para que este escuchando los cambios del archivo app.js
+
+# Configuración Minima Servidor HTTP
+const http = require('http')
+const server = http.createServer((req, res) => {
+    res.end("Estoy respondiendo a tu solicitud v3")
+})
+
+const puerto = 3000
+server.listen(puerto, () => {
+    console.log("Escuchando solicitudes")
+})
+
+
+
+
