@@ -59,3 +59,6 @@ server.listen(puerto, () => {
 # Express
 npm i express
 
+# EJS
+npm i  ejs
+
