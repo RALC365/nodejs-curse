@@ -62,3 +62,5 @@ npm i express
 # EJS
 npm i  ejs
 
+# MongoDB
+Utilizaremos mongoose - npm install mongoose
