@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Mascota = require('../models/mascota')
+const { route } = require('./RutasWeb')
 
 
 router.get('/', async (req, res) =>{
@@ -63,6 +64,30 @@ router.get('/:id', async(req, res) => {
             error: true,
             mensaje: 'No se encuentra el ID seleccionado'
         })
+    }
+})
+
+router.delete('/:id', async(req, res) => {
+    const id = req.params.id
+
+    try {
+        const mascotaDB = await Mascota.findByIdAndDelete({_id: id})
+        if(mascotaDB){
+            res.json({
+                estado: true,
+                mensaje: "eliminado!"
+            })
+        }else{
+            res.json({
+                estado: false,
+                mensaje: "Fallo eliminar!"
+            })
+
+        }
+
+
+    } catch (error) {
+        console.log(error)
     }
 })
 
