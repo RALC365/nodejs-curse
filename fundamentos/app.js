@@ -12,21 +12,12 @@ app.set('views',__dirname + '/views')
 //archivos estáticos - Middleware
 app.use(express.static(__dirname + '/public'))
 
+//Rutas de la API
+app.use('/',require('./router/RutasWeb'))
+app.use('/mascotas',require('./router/Mascotas'))
 
 
-//Solicitudes con respuestas
-app.get('/', (req, res) => {
-    //console.log(__dirname)
-    //resp.send("Mi respuesta desde express v2")
-    res.render('index',{titulo: 'mi titulo dinámico'})
-})
-
-app.get('/servicios', (req, res) => {
-    res.render('servicios',{tituloServicio: 'Este es un mensaje dinámico de servicio'})
-
-})
-
-//Página 404 - responde siempre y cuando no encuentre una ruta configurada
+//Página 404 - responde siempre y cuando no encuentre una ruta configurada - middleware
 app.use((req, res, next) => {
     //res.status(404).sendFile(__dirname + '/public/404.html')
     res.status(404).render('404', {
