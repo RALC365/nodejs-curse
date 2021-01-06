@@ -71,3 +71,6 @@ Utilizaremos mongoose - npm install mongoose
 
 ## Variables de entorno
 npm i dotenv
+
+## CRUD
+npm i body-parser

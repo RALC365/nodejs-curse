@@ -1,6 +1,13 @@
 const express = require('express')
+//Nos ayudará con el CRUD - Express, MongoDB
+const bodyparser = require('body-parser')
 const app = express()
 
+
+app.use(bodyparser.urlencoded({extended: false}))
+app.use(bodyparser.json())
+
+//variables de entorno
 require('dotenv').config()
 
 //En el deploy el puerto lo proporciona el hosting, asi que hay que hace2rlo dinámico
