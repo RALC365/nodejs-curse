@@ -1,16 +1,15 @@
 const express = require('express')
 const app = express()
 
+require('dotenv').config()
+
 //En el deploy el puerto lo proporciona el hosting, asi que hay que hace2rlo dinámico
 const puerto = process.env.PORT || 3000
 
 //Conexión a Base de Datos
 const mongoose = require('mongoose')
 
-const user = 'youtube_vet'
-const password = 'ROUzzu8eTlNZJiQ7'
-const dbname = 'veterinaria'
-const uri = `mongodb+srv://${user}:${password}@cluster0.nmwrc.mongodb.net/${dbname}?retryWrites=true&w=majority`
+const uri = `mongodb+srv://${process.env.USUARIO}:${process.env.PASSWORD}@cluster0.nmwrc.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
 
 mongoose.connect(uri, 
         {useNewUrlParser: true, useUnifiedTopology: true}

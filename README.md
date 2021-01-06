@@ -55,6 +55,10 @@ server.listen(puerto, () => {
     console.log("Escuchando solicitudes")
 })
 
+# Heroku
+git add .
+git commit -m "Commit"
+git push heroku master
 
 # Express
 npm i express
@@ -64,3 +68,6 @@ npm i  ejs
 
 # MongoDB
 Utilizaremos mongoose - npm install mongoose
+
+## Variables de entorno
+npm i dotenv
