@@ -5,6 +5,16 @@ require('dotenv').config()
 
 const app = express()
 
+//cors
+const cors = require('cors')
+var corsOptions = {
+    //Colocar el dominio donde estará el fronted
+    origin: '*',
+    optionsSuccessStatus: 200 //para internet explorer
+}
+app.use(cors(corsOptions))
+
+
 //capturar el body
 app.use(bodyparser.urlencoded({extended: false}))
 app.use(bodyparser.json())
