@@ -3,3 +3,6 @@ fundamentos/.env
 
 api-jwt-youtube/node_modules
 api-jwt-youtube/.env
+
+fronted-vue/node_modules
+fronted-vue/.env

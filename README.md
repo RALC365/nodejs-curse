@@ -79,11 +79,19 @@ npm i body-parser
 
 ### dependencias
  npm i express
+
  npm i body-parser
+
  npm i mongoose
+
  npm i bcrypt
+
  npm i dotenv
+
  npm i jsonwebtoken
+
  npm i -g nodemon
+
  npm i @hapi/joi
+ 
  npm i cors
